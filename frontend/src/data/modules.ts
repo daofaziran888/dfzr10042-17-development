@@ -244,6 +244,17 @@ export const MODULES: ModuleMeta[] = [
     actionTargets: {"发布模板": "已发布", "标记异常": "格式异常", "停用模板": "已停用"},
     metrics: ["模板总数", "已发布模板", "格式异常数"],
   },
+  {
+    key: "report_binding",
+    name: "报告数据集绑定",
+    entity: "报告数据集绑定",
+    desc: "按指标保存报告实际使用的关联方案与已核验真实结果版本，月报确认后冻结历史明细。",
+    fields: ["绑定编号", "报告编号", "指标名称", "关联方案", "结果版本", "结果行数", "明细指纹", "绑定状态"],
+    statuses: ["草稿", "已核验", "更正中", "已归档"],
+    actions: ["提交核验", "发起更正", "归档绑定"],
+    actionTargets: {"提交核验": "已核验", "发起更正": "更正中", "归档绑定": "已归档"},
+    metrics: ["绑定总数", "已核验绑定", "更正中绑定"],
+  },
 ]
 
 export const MODULE_BY_KEY: Map<string, ModuleMeta> = new Map(
